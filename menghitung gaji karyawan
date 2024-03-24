@@ -1,0 +1,22 @@
+import os
+
+def hitung_gaji():
+    nama = input("Masukkan nama karyawan: ")
+    jam_kerja = float(input("Masukkan jumlah jam kerja: "))
+    tarif_per_jam = float(input("Masukkan tarif per jam: "))
+
+    gaji = jam_kerja * tarif_per_jam
+
+    print(f"Nama karyawan: {nama}")
+    print(f"Jumlah jam kerja: {int(jam_kerja)} jam")        # Konversi ke integer untuk menghilangkan .0
+    print(f"Tarif per jam: Rp {tarif_per_jam}")
+    print(f"Gaji yang diterima: Rp {gaji:,.2f}")            # Format dengan pemisah ribuan dan 2 digit desimal
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+while True:
+    hitung_gaji()
+    lagi = input("Hitung gaji karyawan lagi? (y/n): ").lower()
+    if lagi != 'y':
+        break
+    clear_screen()
